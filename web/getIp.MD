@@ -1,4 +1,6 @@
-public static String getIpAddr(HttpServletRequest request) {
+获取api访问的IP  
+
+    public static String getIpAddr(HttpServletRequest request) {
 		String ip = request.getHeader("x-forwarded-for");
 		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
 			ip = request.getHeader("Proxy-Client-IP");
@@ -11,3 +13,4 @@ public static String getIpAddr(HttpServletRequest request) {
 		}
 		return ip;
 	}
+    
